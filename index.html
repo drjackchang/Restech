@@ -11,110 +11,120 @@
 <style>
   :root{
     --bg:#0a0d0f; --surface:#12171a; --surface-2:#171d21; --line:#232b2f;
-    --text:#dce4e6; --text-dim:#7c8a8e;
+    --text:#e7edee; --text-dim:#93a0a3;
     --signal:#2fe6c4; --signal-dim:#123c36;
     --amber:#f5a623; --amber-dim:#3a2d10;
     --rose:#e85d75; --rose-dim:#3a1620;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans TC', sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  html{scroll-behavior:smooth; font-size:18px;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans TC', sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;font-size:1rem;}
   ::selection{background:var(--signal);color:#04211c;}
   a{color:inherit;}
   .mono{font-family:'IBM Plex Mono', monospace;}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
-  .eyebrow{font-family:'IBM Plex Mono', monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);}
-  h1,h2,h3{font-family:'Noto Serif TC', serif;font-weight:900;margin:0;color:#f2f6f6;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:'IBM Plex Mono', monospace;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);}
+  h1,h2,h3{font-family:'Noto Serif TC', serif;font-weight:900;margin:0;color:#f5f8f8;}
 
-  .topbar{position:sticky;top:0;z-index:50;background:rgba(10,13,15,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(10,13,15,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
   .brand{display:flex;align-items:center;gap:10px;}
-  .brand .mark{font-family:'IBM Plex Mono';font-weight:600;font-size:13px;color:#04211c;background:var(--signal);padding:3px 8px;border-radius:3px;letter-spacing:.05em;}
-  .brand .name{font-weight:700;font-size:15px;color:#f2f6f6;}
-  .nav{display:flex;gap:26px;font-size:14px;}
+  .brand .mark{font-family:'IBM Plex Mono';font-weight:600;font-size:.85rem;color:#04211c;background:var(--signal);padding:4px 9px;border-radius:3px;letter-spacing:.05em;}
+  .brand .name{font-weight:700;font-size:1.05rem;color:#f5f8f8;}
+  .nav{display:flex;gap:28px;font-size:.95rem;}
   .nav a{text-decoration:none;color:var(--text-dim);transition:color .15s;}
   .nav a:hover{color:var(--signal);}
 
-  .hero{padding:88px 0 56px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+  .hero{padding:92px 0 60px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
   .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% -10%, var(--signal-dim), transparent 60%);pointer-events:none;}
   .hero-inner{position:relative;}
-  .hero .eyebrow{margin-bottom:18px;}
-  .hero h1{font-size:clamp(30px,5vw,48px);line-height:1.25;letter-spacing:.01em;}
-  .hero .en{font-family:'IBM Plex Mono';color:var(--text-dim);font-size:15px;margin-top:10px;}
-  .hero-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;}
-  .chip{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--text);border:1px solid var(--line);background:var(--surface);padding:8px 14px;border-radius:3px;}
+  .hero .eyebrow{margin-bottom:20px;}
+  .hero h1{font-size:clamp(32px,5vw,52px);line-height:1.25;letter-spacing:.01em;}
+  .hero .en{font-family:'IBM Plex Mono';color:var(--text-dim);font-size:1.05rem;margin-top:12px;}
+  .hero-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+  .chip{font-family:'IBM Plex Mono';font-size:.9rem;color:var(--text);border:1px solid var(--line);background:var(--surface);padding:9px 15px;border-radius:3px;}
   .chip b{color:var(--signal);font-weight:600;}
-  .hero-desc{margin-top:28px;max-width:640px;color:var(--text-dim);font-size:15.5px;}
+  .hero-desc{margin-top:30px;max-width:680px;color:var(--text-dim);font-size:1.15rem;line-height:1.8;}
 
-  section{padding:60px 0;border-bottom:1px solid var(--line);}
-  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px;}
-  .section-head .idx{font-family:'IBM Plex Mono';color:var(--signal);font-size:13px;}
-  .section-head h2{font-size:24px;}
-  .section-sub{color:var(--text-dim);font-size:14px;margin:0 0 30px;}
+  section{padding:68px 0;border-bottom:1px solid var(--line);}
+  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:10px;}
+  .section-head .idx{font-family:'IBM Plex Mono';color:var(--signal);font-size:.85rem;}
+  .section-head h2{font-size:1.65rem;}
+  .section-sub{color:var(--text-dim);font-size:1rem;margin:0 0 30px;}
 
-  .legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:24px;font-size:12.5px;color:var(--text-dim);font-family:'IBM Plex Mono';}
-  .legend span{display:inline-flex;align-items:center;gap:7px;}
-  .dot{width:9px;height:9px;border-radius:2px;display:inline-block;}
-  .signal-map{display:flex;gap:4px;overflow-x:auto;padding:6px 0 22px;scrollbar-width:thin;}
-  .node{flex:0 0 auto;width:50px;text-align:center;cursor:pointer;}
-  .node .sq{width:100%;height:36px;border-radius:4px;border:1px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:12px;color:var(--text-dim);transition:transform .15s, border-color .15s;}
+  .legend{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:26px;font-size:.9rem;color:var(--text-dim);font-family:'IBM Plex Mono';}
+  .legend span{display:inline-flex;align-items:center;gap:8px;}
+  .dot{width:10px;height:10px;border-radius:2px;display:inline-block;}
+  .signal-map{display:flex;gap:5px;overflow-x:auto;padding:6px 0 24px;scrollbar-width:thin;}
+  .node{flex:0 0 auto;width:56px;text-align:center;cursor:pointer;}
+  .node .sq{width:100%;height:42px;border-radius:4px;border:1px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:.85rem;color:var(--text-dim);transition:transform .15s, border-color .15s;}
   .node.lecture .sq{border-color:var(--signal-dim);color:var(--signal);}
   .node.report .sq{background:var(--rose-dim);border-color:var(--rose);color:var(--rose);}
   .node.flex .sq{background:var(--amber-dim);border-color:var(--amber);color:var(--amber);}
   .node.pending .sq{border-color:#c9a227;color:#e8c547;border-style:dashed;}
   .node:hover .sq{transform:translateY(-3px);}
-  .node .lbl{font-family:'IBM Plex Mono';font-size:9.5px;color:var(--text-dim);margin-top:6px;display:block;}
+  .node .lbl{font-family:'IBM Plex Mono';font-size:.68rem;color:var(--text-dim);margin-top:7px;display:block;}
 
-  .weeklist{display:flex;flex-direction:column;gap:10px;}
+  .weeklist{display:flex;flex-direction:column;gap:11px;}
   .weekcard{border:1px solid var(--line);border-radius:6px;background:var(--surface);overflow:hidden;}
   .weekcard.row-flex{border-color:var(--amber);}
   .weekcard.row-report{border-color:var(--rose);}
   .weekcard.row-pending{border-color:#c9a227;border-style:dashed;}
-  .weekhead{display:flex;align-items:center;gap:16px;padding:14px 18px;cursor:pointer;user-select:none;}
+  .weekhead{display:flex;align-items:center;gap:18px;padding:16px 20px;cursor:pointer;user-select:none;}
   .weekhead:hover{background:var(--surface-2);}
-  .wk{font-family:'IBM Plex Mono';color:var(--signal);width:34px;flex:0 0 auto;}
-  .dt{font-family:'IBM Plex Mono';color:var(--text-dim);width:64px;flex:0 0 auto;font-size:13px;}
-  .wtitle{flex:1;font-size:14.5px;}
-  .tag{display:inline-block;font-family:'IBM Plex Mono';font-size:10.5px;padding:2px 8px;border-radius:3px;border:1px solid currentColor;white-space:nowrap;}
+  .wk{font-family:'IBM Plex Mono';color:var(--signal);width:38px;flex:0 0 auto;font-size:1rem;}
+  .dt{font-family:'IBM Plex Mono';color:var(--text-dim);width:68px;flex:0 0 auto;font-size:.9rem;}
+  .wtitle{flex:1;font-size:1.05rem;}
+  .tag{display:inline-block;font-family:'IBM Plex Mono';font-size:.78rem;padding:3px 9px;border-radius:3px;border:1px solid currentColor;white-space:nowrap;}
   .tag.flex{color:var(--amber);}
   .tag.report{color:var(--rose);}
   .tag.pending{color:#e8c547;}
-  .caret{color:var(--text-dim);font-family:'IBM Plex Mono';transition:transform .2s;flex:0 0 auto;}
+  .caret{color:var(--text-dim);font-family:'IBM Plex Mono';transition:transform .2s;flex:0 0 auto;font-size:1.1rem;}
   .weekcard.open .caret{transform:rotate(90deg);}
-  .weekbody{display:none;padding:0 18px 20px 18px;border-top:1px dashed var(--line);}
+  .weekbody{display:none;padding:0 20px 22px 20px;border-top:1px dashed var(--line);}
   .weekcard.open .weekbody{display:block;}
-  .weeknote{color:var(--text-dim);font-size:13.5px;margin:14px 0 4px;padding:10px 12px;background:var(--surface-2);border-radius:4px;border-left:2px solid var(--amber);}
+  .weeknote{color:var(--text-dim);font-size:.95rem;margin:16px 0 4px;padding:12px 14px;background:var(--surface-2);border-radius:4px;border-left:3px solid var(--amber);}
   .weeknote.warn{border-left-color:#e8c547;}
-  .reslist{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
-  .resitem{display:flex;gap:10px;font-size:13.5px;padding:10px 12px;background:var(--bg);border:1px solid var(--line);border-radius:4px;}
-  .resitem .ico{flex:0 0 auto;font-size:15px;}
-  .resitem a{color:var(--signal);text-decoration:none;font-weight:500;}
+  .reslist{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .resitem{display:flex;gap:12px;font-size:1rem;padding:14px 16px;background:var(--bg);border:1px solid var(--line);border-radius:5px;}
+  .resitem .ico{flex:0 0 auto;font-size:1.2rem;}
+  .resitem a{color:var(--signal);text-decoration:none;font-weight:600;font-size:1.02rem;}
   .resitem a:hover{text-decoration:underline;}
-  .resitem .meta{color:var(--text-dim);font-size:12px;margin-top:2px;}
-  .resempty{color:var(--text-dim);font-size:13px;padding:10px 0 0;}
+  .resitem .meta{color:var(--text-dim);font-size:.85rem;margin-top:3px;font-family:'IBM Plex Mono';}
+  .resitem .desc{color:var(--text);opacity:.88;font-size:.96rem;margin-top:7px;line-height:1.65;}
+  .resempty{color:var(--text-dim);font-size:1rem;padding:10px 0 0;}
 
-  .grade-bars{display:flex;flex-direction:column;gap:16px;}
-  .gbar-row{display:flex;align-items:center;gap:16px;}
-  .gbar-label{width:170px;flex:0 0 auto;font-size:14px;}
-  .gbar-track{flex:1;height:10px;background:var(--surface-2);border-radius:5px;overflow:hidden;}
+  .grade-bars{display:flex;flex-direction:column;gap:18px;}
+  .gbar-row{display:flex;align-items:center;gap:18px;}
+  .gbar-label{width:190px;flex:0 0 auto;font-size:1rem;}
+  .gbar-track{flex:1;height:11px;background:var(--surface-2);border-radius:5px;overflow:hidden;}
   .gbar-fill{height:100%;background:linear-gradient(90deg,var(--signal-dim),var(--signal));}
-  .gbar-pct{width:44px;text-align:right;font-family:'IBM Plex Mono';color:var(--signal);font-size:14px;}
+  .gbar-pct{width:50px;text-align:right;font-family:'IBM Plex Mono';color:var(--signal);font-size:1rem;}
 
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
   @media (max-width:720px){.grid2{grid-template-columns:1fr;} .dt{display:none;}}
-  .card{border:1px solid var(--line);border-radius:6px;padding:22px;background:var(--surface);}
-  .card h3{font-size:15px;margin-bottom:10px;color:var(--signal);font-family:'IBM Plex Mono';font-weight:600;letter-spacing:.03em;}
-  .card p, .card li{color:var(--text-dim);font-size:14px;}
-  .card ul{margin:0;padding-left:18px;}
+  .card{border:1px solid var(--line);border-radius:6px;padding:24px;background:var(--surface);}
+  .card h3{font-size:1rem;margin-bottom:12px;color:var(--signal);font-family:'IBM Plex Mono';font-weight:600;letter-spacing:.03em;}
+  .card p, .card li{color:var(--text-dim);font-size:1rem;}
+  .card ul{margin:0;padding-left:20px;}
 
-  .ann{border:1px solid var(--line);border-radius:6px;padding:18px 20px;margin-bottom:12px;background:var(--surface);}
-  .ann .d{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--text-dim);margin-bottom:6px;}
-  .ann h4{margin:0 0 6px;font-size:15.5px;font-weight:700;color:#f2f6f6;}
-  .ann p{margin:0;color:var(--text-dim);font-size:14px;}
+  .ann{border:1px solid var(--line);border-radius:6px;padding:20px 22px;margin-bottom:14px;background:var(--surface);}
+  .ann .d{font-family:'IBM Plex Mono';font-size:.85rem;color:var(--text-dim);margin-bottom:8px;}
+  .ann h4{margin:0 0 8px;font-size:1.1rem;font-weight:700;color:#f5f8f8;}
+  .ann p{margin:0;color:var(--text-dim);font-size:1rem;}
   .ann.pinned{border-color:var(--signal-dim);}
 
-  footer{padding:40px 0;text-align:center;}
-  .fine{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--text-dim);}
+  .verify-banner{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--signal-dim);border-radius:6px;padding:16px 18px;margin-bottom:28px;font-size:.92rem;color:var(--text-dim);}
+  .verify-banner b{color:var(--signal);}
+
+  footer{padding:44px 0;text-align:center;}
+  .fine{font-family:'IBM Plex Mono';font-size:.8rem;color:var(--text-dim);}
+
+  @media (max-width:640px){
+    html{font-size:16.5px;}
+    .hero{padding:68px 0 44px;}
+    section{padding:48px 0;}
+  }
 </style>
 </head>
 <body>
@@ -141,14 +151,19 @@
       <span class="chip">週四 <b>1–2節 08:10–10:00</b></span>
       <span class="chip">授課 <b>張育通 助理教授</b>　分機1205</span>
     </div>
-    <p class="hero-desc">本課程探討科技如何賦能社會與醫療體系以應對突發性災害，涵蓋 AI 於緊急醫療之應用、GIS 於資源配置、穿戴式裝置與災難現場生理監控，以及數位協作平台於志願者管理之實務。每週附上建議閱讀文獻、相關產品／技術網站與影片，點開週次即可瀏覽。</p>
+    <p class="hero-desc">本課程探討科技如何賦能社會與醫療體系以應對突發性災害，涵蓋 AI 於緊急醫療之應用、GIS 於資源配置、穿戴式裝置與災難現場生理監控，以及數位協作平台於志願者管理之實務。每週附上一篇可直接開啟全文的 SCI 期刊開放取用（OA）文章，並附簡短導讀。</p>
   </div>
 </section>
 
 <section id="schedule">
   <div class="wrap">
     <div class="section-head"><span class="idx mono">01</span><h2>18週課程進度 · SIGNAL MAP</h2></div>
-    <p class="section-sub">點一下地圖節點或下方週次列，展開當週建議閱讀、產品／技術網站與影片。</p>
+    <p class="section-sub">點一下地圖節點或下方週次列，展開當週的 SCI OA 全文文獻與相關技術資源。</p>
+
+    <div class="verify-banner">
+      <span>✓</span>
+      <div><b>連結核實方式：</b>每篇文獻皆為 PubMed Central（PMC）收錄之全文開放取用文章，或 arXiv／期刊出版社直接提供之全文 PDF——這類連結點開就是完整內文，不是摘要頁或購書頁。PMC 對自動化程式有防爬蟲驗證機制，若你在瀏覽器點開時偶爾看到短暫的安全驗證頁，稍候即可跳轉至全文，屬 NCBI 官方機制，非連結失效。</div>
+    </div>
 
     <div class="legend">
       <span><i class="dot" style="background:var(--signal)"></i>講授/討論</span>
@@ -211,7 +226,7 @@
 
 <footer>
   <div class="wrap">
-    <span class="fine">國立臺北護理健康大學 · 健康科技學院碩士班 · 115學年度第1學期 · RT-115 / SIGNAL MAP v3</span>
+    <span class="fine">國立臺北護理健康大學 · 健康科技學院碩士班 · 115學年度第1學期 · RT-115 / SIGNAL MAP v4</span>
   </div>
 </footer>
 
@@ -243,67 +258,76 @@ const SCHEDULE = [
 
 const RESOURCES = {
   1: [
-    {type:'reading', title:'Resilience Engineering in Practice: A Guidebook', meta:'Hollnagel, Woods, Pariès & Wreathall (Eds.), 2011 · AHRQ PSNet', url:'https://psnet.ahrq.gov/issue/resilience-engineering-practice-guidebook'},
-    {type:'reading', title:'Resilience Engineering: Concepts and Precepts', meta:'Hollnagel, Woods & Leveson (Eds.), 2006 · AHRQ PSNet', url:'https://psnet.ahrq.gov/issue/resilience-engineering-concepts-and-precepts'},
+    {type:'article', title:'A process-driven and need-oriented framework for review of technological contributions to disaster management', meta:'Heliyon (Elsevier) · 開放取用 CC BY-NC-ND · PMC8605362', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC8605362/',
+     desc:'系統性回顧無人機、衛星影像、AI等技術，整理它們分別對應到防災整備、應變、復原哪個階段的實際需求，適合作為本課程開場的技術地圖。'},
   ],
   2: [
-    {type:'reading', title:'Health System Resilience: Understanding Complex Adaptive Systems', meta:'Karl Blanchet (Ed.) · The MIT Press', url:'https://mitpressbookstore.mit.edu/book/9780262550925'},
-    {type:'reading', title:'Viewing the global health system as a complex adaptive system', meta:'開放取用期刊論文 · PMC', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10432894/'},
+    {type:'article', title:'Viewing the global health system as a complex adaptive system – implications for research and practice', meta:'Health Policy and Planning · 開放取用 · PMC10432894', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10432894/',
+     desc:'主張把全球健康系統視為複雜適應系統來理解，分析跨尺度的互動如何影響政策設計與韌性建構，呼應本週的適應性循環概念。'},
   ],
   3: [
-    {type:'reading', title:'Digital Future of EMS: Usability of Electronic Patient Care Report System', meta:'Al Haliq & Al Jumaan, 2022', url:'https://doaj.org/article/027a1fb80e37443c810810b9f6e15f7d'},
-    {type:'tool', title:'Rescue.co — 肯亞數位化 EMS 派遣平台', meta:'案例報告 · PMC', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12418930', desc:'以 GPS、Android 裝置與 Google Maps API 打造的低成本派遣系統，將城市平均到達時間從160分鐘降至13分鐘。'},
+    {type:'article', title:'Rescue.co: a case study of a digital emergency medical services coordination platform in Kenya', meta:'開放取用案例報告 · PMC12418930', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12418930',
+     desc:'肯亞的Rescue.co用GPS、Android裝置與Google地圖API打造低成本派遣系統，把城市平均到達時間從160分鐘降到13分鐘，是低資源環境數位轉型的代表案例。'},
   ],
   4: [
     {type:'notice', title:'2026 Cares Expo 台北國際照顧博覽會', meta:'10/1–10/3 · 展覽1館', desc:'本週為彈性教學參訪週，請依課程網站公告繳交參訪心得報告，留意展區內與韌性科技相關的攤位（照護機器人、遠距監測、輔具科技等）。'},
   ],
   5: [
-    {type:'reading', title:'Learning Incident Prediction Models Over Large Geographical Areas for Emergency Response Systems', meta:'arXiv', url:'https://arxiv.org/pdf/2106.08307'},
-    {type:'tool', title:'Esri ArcGIS — 災害應變解決方案', meta:'Esri Disaster Response Program', url:'https://www.businesswire.com/news/home/20200319005357/en/Esri-Provides-Free-Mapping-Software-for-Organizations-Fighting-COVID-19', desc:'全球最主流的災害管理 GIS 平台，提供資源配置、儀表板與即時地圖工具。'},
-    {type:'video', title:'ArcGIS Online Case Study: Emergency Management – Cal OES', meta:'YouTube · 3:54', url:'https://www.youtube.com/watch?v=gqgncszNsEo'},
+    {type:'article', title:'Spatial analysis of prehospital emergency medical services accessibility: a comparative evaluation in Handan City', meta:'開放取用 · PMC11986854', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11986854/',
+     desc:'用GAUSS機率兩步移動搜索法評估中國邯鄲市到院前醫療資源的空間可近性，展示GIS如何具體支援資源配置的決策。'},
+    {type:'tool', title:'Esri ArcGIS — 災害應變解決方案', meta:'Esri Disaster Response Program', url:'https://www.businesswire.com/news/home/20200319005357/en/Esri-Provides-Free-Mapping-Software-for-Organizations-Fighting-COVID-19', desc:'全球最主流的災害管理GIS平台，提供資源配置、儀表板與即時地圖工具。'},
+    {type:'video', title:'ArcGIS Online Case Study: Emergency Management – Cal OES', meta:'YouTube · 3:54', url:'https://www.youtube.com/watch?v=gqgncszNsEo', desc:'加州緊急事務辦公室示範如何用ArcGIS Online建立即時應變儀表板。'},
   ],
   6: [
-    {type:'reading', title:'FireCom — 智慧韌性城市數位分身：都市火災即時追蹤與預測平台', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12513986/'},
-    {type:'tool', title:'PANTHEON — 社區型智慧城市數位分身平台（EU Horizon）', meta:'CORDIS 計畫成果頁', url:'https://cordis.europa.eu/project/id/101074008/results', desc:'歐盟資助的社區導向智慧城市數位分身計畫，強化災害風險管理決策。'},
+    {type:'article', title:'FireCom: real-time fire and smoke tracking and prediction platform for community awareness', meta:'開放取用 · PMC12513986', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12513986/',
+     desc:'以美國奧斯汀市為案例，整合空氣品質感測器、氣象資料與3D建築資訊，打造都市火災即時追蹤與預測的數位分身平台。'},
+    {type:'tool', title:'PANTHEON — 社區型智慧城市數位分身平台', meta:'EU Horizon · CORDIS計畫成果頁', url:'https://cordis.europa.eu/project/id/101074008/results', desc:'歐盟資助的社區導向智慧城市數位分身計畫，強化災害風險管理決策。'},
   ],
   7: [
-    {type:'reading', title:'The Johns Hopkins University CSSE COVID-19 Dashboard: data collection process, challenges faced, and lessons learned', meta:'The Lancet Digital Health · PMC', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC9432867'},
+    {type:'article', title:'The Johns Hopkins University CSSE COVID-19 Dashboard: data collection process, challenges faced, and lessons learned', meta:'The Lancet Digital Health · 開放取用 · PMC9432867', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC9432867',
+     desc:'揭露全球最知名的即時大數據監測系統——JHU COVID-19儀表板——背後的資料整合、異常偵測與團隊運作細節。'},
   ],
   8: [
-    {type:'reading', title:'Building a Machine Learning-based Ambulance Dispatch Triage Model for EMS', meta:'新加坡全國急救call center資料 · PMC', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10880163/'},
-    {type:'tool', title:'AI-assisted Dispatch Systems for Optimal Resource Allocation in Emergencies', meta:'IEEE Public Safety Technology Initiative', url:'https://publicsafety.ieee.org/topics/ai-assisted-dispatch-systems-for-optimal-resource-allocation-in-emergencies/'},
+    {type:'article', title:'Building a Machine Learning-based Ambulance Dispatch Triage Model for Emergency Medical Services', meta:'開放取用 · PMC10880163', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10880163/',
+     desc:'用新加坡全國急救call center逾36萬筆資料訓練隨機森林模型，將派遣過度分級的比例降低15%。'},
+    {type:'tool', title:'AI-assisted Dispatch Systems for Optimal Resource Allocation in Emergencies', meta:'IEEE Public Safety Technology Initiative', url:'https://publicsafety.ieee.org/topics/ai-assisted-dispatch-systems-for-optimal-resource-allocation-in-emergencies/', desc:'IEEE公共安全技術倡議對AI派遣系統的技術概覽文章。'},
   ],
   9: [
-    {type:'reading', title:'Real-Time Monitoring Electronic Triage Tag System for Improving Survival Rate in Disaster-Induced MCI', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8307670/'},
-    {type:'reading', title:'Wearable Proximity Sensors for Monitoring a Mass Casualty Incident Exercise: Feasibility Study', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6658323/'},
+    {type:'article', title:'Real-Time Monitoring Electronic Triage Tag System for Improving Survival Rate in Disaster-Induced Mass Casualty Incidents', meta:'開放取用 · PMC8307670', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8307670/',
+     desc:'開發結合穿戴式感測器的電子檢傷牌系統，在災難現場持續監測生命徵象並支援大量傷病患檢傷分級。'},
+    {type:'article', title:'Wearable Proximity Sensors for Monitoring a Mass Casualty Incident Exercise: Feasibility Study', meta:'開放取用 · PMC6658323', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6658323/',
+     desc:'用穿戴式近接感測器記錄大量傷病患演習中醫護人員與傷患的接觸網絡，藉此評估演習動線與成效。'},
   ],
   10: [
+    {type:'article', title:'Crowdsourcing as a Tool for Urban Emergency Management: Lessons from the Literature and Typology', meta:'開放取用 · PMC6928978', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6928978/',
+     desc:'系統性整理都市緊急管理中群眾外包平台的應用類型與品質控管挑戰，呼應本週志願者管理與行為擴散的主題。'},
     {type:'tool', title:'GoodSAM Responder — 志工/專業急救員派遣App', meta:'NHS 與各國 EMS 採用', url:'https://apps.apple.com/app/id815154202', desc:'串連受過CPR訓練的志工與心跳停止案件，也用於NHS志工調度。'},
-    {type:'reading', title:"'Walkie talkie' app Zello tops App Store during hurricanes", meta:'BBC News', url:'https://feeds.bbci.co.uk/news/technology-41224942'},
   ],
   11: [
-    {type:'reading', title:'The Mechanism of Social Organization Participation in Natural Hazards Emergency Relief（雅安地震SNA案例）', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6862843/'},
-    {type:'reading', title:'Social Network Analysis of Disaster Response, Recovery, and Adaptation', meta:'Jones & Faas (Eds.) · Elsevier', url:'https://shop.elsevier.com/books/social-network-analysis-of-disaster-response-recovery-and-adaptation/jones/978-0-12-805196-2'},
+    {type:'article', title:'The Mechanism of Social Organization Participation in Natural Hazards Emergency Relief: A Case Study Based on Social Network Analysis', meta:'開放取用 · PMC6862843', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6862843/',
+     desc:'以2013年中國雅安地震為案例，用社會網絡分析法拆解政府與民間組織在救災中的實際協作網絡結構。'},
   ],
   12: [
-    {type:'reading', title:'Fairness and accountability of AI in disaster risk management: Opportunities and challenges', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8600248/'},
-    {type:'reading', title:'Taking Ethics, Fairness, and Bias Seriously in Machine Learning for Disaster Risk Management', meta:'arXiv（提及Harvard Humanitarian Initiative的Signal Code）', url:'https://arxiv.org/pdf/1912.05538'},
+    {type:'article', title:'Fairness and accountability of AI in disaster risk management: Opportunities and challenges', meta:'開放取用 · PMC8600248', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8600248/',
+     desc:'討論AI用於災害風險管理時，地理資料的隱藏偏誤如何影響資源分配的公平性，以及演算法開發者與受災社區之間的問責落差。'},
   ],
   13: [
     {type:'notice', title:'Healthcare+ Expo Taiwan 台灣醫療科技展', meta:'12/3–12/6 · 南港展覽館', url:'https://www.businesswire.com/news/home/20231201397595/zh-CN', desc:'亞太最大醫療科技展之一，涵蓋AI醫療、穿戴式裝置、遠距照護等。教師出差期間，各組準備「國際案例：EMS科技發展」簡報。'},
   ],
   14: [
-    {type:'reading', title:'Starlink puts towns devastated by wildfires online for disaster relief workers', meta:'TechCrunch', url:'https://techcrunch.com/2020/09/29/starlink-puts-towns-devastated-by-wildfires-online-for-disaster-relief-workers'},
-    {type:'tool', title:'ASPR TRACIE — 災難通訊系統資源專輯', meta:'美國衛生部技術資源合輯', url:'https://asprtracie.hhs.gov/technical-resources/78/Communication-Systems/0'},
+    {type:'article', title:'Satellite communications in health emergencies: no longer a luxury', meta:'開放取用 · PMC11946833', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC11946833/',
+     desc:'以2024年萬那杜地震為例，說明陸地通訊網路全面中斷時，衛星通訊如何撐起醫療協調與需求評估工作。'},
+    {type:'tool', title:'ASPR TRACIE — 災難通訊系統資源專輯', meta:'美國衛生部技術資源合輯', url:'https://asprtracie.hhs.gov/technical-resources/78/Communication-Systems/0', desc:'美國衛生部整理的災難通訊技術資源清單，含Starlink部署案例。'},
   ],
   15: [
+    {type:'article', title:'Artificial Intelligence in Prehospital Emergency Care: Advancing Triage and Destination Decisions for Time-Critical Conditions', meta:'開放取用 · PMC12494111', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12494111/',
+     desc:'回顧AI在到院前檢傷與送醫決策的最新應用，並指出目前多數研究仍缺乏前瞻性臨床驗證，是相對務實的技術現況盤點。'},
     {type:'tool', title:'n8n — 開源工作流程自動化工具', meta:'n8n.io', url:'https://n8n.io', desc:'可視化拉線串接不同服務，適合搭配Google Sheets/GAS自動化課程或研究流程。'},
-    {type:'tool', title:'Zapier — 無程式碼自動化平台', meta:'zapier.com', url:'https://zapier.com', desc:'串接超過7000個應用程式的自動化工具，可作為自動化工具應用的入門示範。'},
   ],
   16: [], 17: [], 18: [],
 };
 
-const ICONS = {reading:'📖', tool:'🔗', video:'▶️', notice:'📌'};
+const ICONS = {article:'📄', tool:'🔗', video:'▶️', notice:'📌'};
 
 const DEMO_ANN = [
   {date:'2026-09-01', title:'課程網站上線', body:'本學期課程資訊、進度公告與每週資源將統一透過本站發布，請定期查看。', pinned:true},
@@ -353,7 +377,8 @@ function renderList(){
           <span class="ico">${ICONS[r.type]}</span>
           <div>
             ${r.url ? `<a href="${r.url}" target="_blank" rel="noopener">${r.title}</a>` : `<strong>${r.title}</strong>`}
-            <div class="meta">${r.meta || ''}${r.desc ? ' — ' + r.desc : ''}</div>
+            <div class="meta">${r.meta || ''}</div>
+            <div class="desc">${r.desc || ''}</div>
           </div>
         </li>`).join('') + '</ul>';
     } else if(!row.note){
