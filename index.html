@@ -10,133 +10,89 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0d0f;
-    --surface:#12171a;
-    --surface-2:#171d21;
-    --line:#232b2f;
-    --text:#dce4e6;
-    --text-dim:#7c8a8e;
-    --signal:#2fe6c4;
-    --signal-dim:#123c36;
-    --amber:#f5a623;
-    --amber-dim:#3a2d10;
-    --rose:#e85d75;
-    --rose-dim:#3a1620;
+    --bg:#0a0d0f; --surface:#12171a; --surface-2:#171d21; --line:#232b2f;
+    --text:#dce4e6; --text-dim:#7c8a8e;
+    --signal:#2fe6c4; --signal-dim:#123c36;
+    --amber:#f5a623; --amber-dim:#3a2d10;
+    --rose:#e85d75; --rose-dim:#3a1620;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Noto Sans TC', sans-serif;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans TC', sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
   ::selection{background:var(--signal);color:#04211c;}
   a{color:inherit;}
   .mono{font-family:'IBM Plex Mono', monospace;}
   .wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--signal);
-  }
+  .eyebrow{font-family:'IBM Plex Mono', monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);}
   h1,h2,h3{font-family:'Noto Serif TC', serif;font-weight:900;margin:0;color:#f2f6f6;}
 
-  /* topbar */
-  .topbar{
-    position:sticky;top:0;z-index:50;
-    background:rgba(10,13,15,.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(10,13,15,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
   .brand{display:flex;align-items:center;gap:10px;}
-  .brand .mark{
-    font-family:'IBM Plex Mono';font-weight:600;font-size:13px;
-    color:#04211c;background:var(--signal);
-    padding:3px 8px;border-radius:3px;letter-spacing:.05em;
-  }
+  .brand .mark{font-family:'IBM Plex Mono';font-weight:600;font-size:13px;color:#04211c;background:var(--signal);padding:3px 8px;border-radius:3px;letter-spacing:.05em;}
   .brand .name{font-weight:700;font-size:15px;color:#f2f6f6;}
   .nav{display:flex;gap:26px;font-size:14px;}
   .nav a{text-decoration:none;color:var(--text-dim);transition:color .15s;}
   .nav a:hover{color:var(--signal);}
 
-  /* hero */
-  .hero{padding:96px 0 64px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
-  .hero::before{
-    content:"";position:absolute;inset:0;
-    background:
-      radial-gradient(600px 300px at 85% -10%, var(--signal-dim), transparent 60%);
-    pointer-events:none;
-  }
+  .hero{padding:88px 0 56px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% -10%, var(--signal-dim), transparent 60%);pointer-events:none;}
   .hero-inner{position:relative;}
   .hero .eyebrow{margin-bottom:18px;}
   .hero h1{font-size:clamp(30px,5vw,48px);line-height:1.25;letter-spacing:.01em;}
   .hero .en{font-family:'IBM Plex Mono';color:var(--text-dim);font-size:15px;margin-top:10px;}
   .hero-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;}
-  .chip{
-    font-family:'IBM Plex Mono';font-size:12.5px;color:var(--text);
-    border:1px solid var(--line);background:var(--surface);
-    padding:8px 14px;border-radius:3px;
-  }
+  .chip{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--text);border:1px solid var(--line);background:var(--surface);padding:8px 14px;border-radius:3px;}
   .chip b{color:var(--signal);font-weight:600;}
   .hero-desc{margin-top:28px;max-width:640px;color:var(--text-dim);font-size:15.5px;}
 
-  section{padding:64px 0;border-bottom:1px solid var(--line);}
-  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:34px;}
+  section{padding:60px 0;border-bottom:1px solid var(--line);}
+  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px;}
   .section-head .idx{font-family:'IBM Plex Mono';color:var(--signal);font-size:13px;}
   .section-head h2{font-size:24px;}
+  .section-sub{color:var(--text-dim);font-size:14px;margin:0 0 30px;}
 
-  /* signal map */
-  .legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:28px;font-size:12.5px;color:var(--text-dim);font-family:'IBM Plex Mono';}
+  .legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:24px;font-size:12.5px;color:var(--text-dim);font-family:'IBM Plex Mono';}
   .legend span{display:inline-flex;align-items:center;gap:7px;}
   .dot{width:9px;height:9px;border-radius:2px;display:inline-block;}
-  .signal-map{
-    display:flex;gap:4px;overflow-x:auto;padding:6px 0 22px;
-    scrollbar-width:thin;
-  }
-  .node{
-    flex:0 0 auto;width:52px;text-align:center;cursor:pointer;
-  }
-  .node .sq{
-    width:100%;height:38px;border-radius:4px;border:1px solid var(--line);
-    background:var(--surface);display:flex;align-items:center;justify-content:center;
-    font-family:'IBM Plex Mono';font-size:12px;color:var(--text-dim);
-    transition:transform .15s, border-color .15s;
-  }
+  .signal-map{display:flex;gap:4px;overflow-x:auto;padding:6px 0 22px;scrollbar-width:thin;}
+  .node{flex:0 0 auto;width:50px;text-align:center;cursor:pointer;}
+  .node .sq{width:100%;height:36px;border-radius:4px;border:1px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:12px;color:var(--text-dim);transition:transform .15s, border-color .15s;}
   .node.lecture .sq{border-color:var(--signal-dim);color:var(--signal);}
   .node.report .sq{background:var(--rose-dim);border-color:var(--rose);color:var(--rose);}
   .node.flex .sq{background:var(--amber-dim);border-color:var(--amber);color:var(--amber);}
+  .node.pending .sq{border-color:#c9a227;color:#e8c547;border-style:dashed;}
   .node:hover .sq{transform:translateY(-3px);}
   .node .lbl{font-family:'IBM Plex Mono';font-size:9.5px;color:var(--text-dim);margin-top:6px;display:block;}
 
-  /* schedule table */
-  table{width:100%;border-collapse:collapse;font-size:14.5px;}
-  th{
-    text-align:left;font-family:'IBM Plex Mono';font-size:11.5px;letter-spacing:.06em;
-    color:var(--text-dim);text-transform:uppercase;font-weight:500;
-    padding:10px 12px;border-bottom:1px solid var(--line);
-  }
-  td{padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
-  tr.row-flex{background:var(--amber-dim);}
-  tr.row-report{background:var(--rose-dim);}
-  tr:hover td{background:var(--surface-2);}
-  tr.row-flex:hover td, tr.row-report:hover td{background:inherit;}
-  .wk{font-family:'IBM Plex Mono';color:var(--signal);}
-  .dt{font-family:'IBM Plex Mono';color:var(--text-dim);white-space:nowrap;}
-  .tag{
-    display:inline-block;font-family:'IBM Plex Mono';font-size:11px;
-    padding:2px 8px;border-radius:3px;border:1px solid currentColor;
-  }
+  .weeklist{display:flex;flex-direction:column;gap:10px;}
+  .weekcard{border:1px solid var(--line);border-radius:6px;background:var(--surface);overflow:hidden;}
+  .weekcard.row-flex{border-color:var(--amber);}
+  .weekcard.row-report{border-color:var(--rose);}
+  .weekcard.row-pending{border-color:#c9a227;border-style:dashed;}
+  .weekhead{display:flex;align-items:center;gap:16px;padding:14px 18px;cursor:pointer;user-select:none;}
+  .weekhead:hover{background:var(--surface-2);}
+  .wk{font-family:'IBM Plex Mono';color:var(--signal);width:34px;flex:0 0 auto;}
+  .dt{font-family:'IBM Plex Mono';color:var(--text-dim);width:64px;flex:0 0 auto;font-size:13px;}
+  .wtitle{flex:1;font-size:14.5px;}
+  .tag{display:inline-block;font-family:'IBM Plex Mono';font-size:10.5px;padding:2px 8px;border-radius:3px;border:1px solid currentColor;white-space:nowrap;}
   .tag.flex{color:var(--amber);}
   .tag.report{color:var(--rose);}
-  .tag.disc{color:var(--signal);opacity:.8;}
+  .tag.pending{color:#e8c547;}
+  .caret{color:var(--text-dim);font-family:'IBM Plex Mono';transition:transform .2s;flex:0 0 auto;}
+  .weekcard.open .caret{transform:rotate(90deg);}
+  .weekbody{display:none;padding:0 18px 20px 18px;border-top:1px dashed var(--line);}
+  .weekcard.open .weekbody{display:block;}
+  .weeknote{color:var(--text-dim);font-size:13.5px;margin:14px 0 4px;padding:10px 12px;background:var(--surface-2);border-radius:4px;border-left:2px solid var(--amber);}
+  .weeknote.warn{border-left-color:#e8c547;}
+  .reslist{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .resitem{display:flex;gap:10px;font-size:13.5px;padding:10px 12px;background:var(--bg);border:1px solid var(--line);border-radius:4px;}
+  .resitem .ico{flex:0 0 auto;font-size:15px;}
+  .resitem a{color:var(--signal);text-decoration:none;font-weight:500;}
+  .resitem a:hover{text-decoration:underline;}
+  .resitem .meta{color:var(--text-dim);font-size:12px;margin-top:2px;}
+  .resempty{color:var(--text-dim);font-size:13px;padding:10px 0 0;}
 
-  /* grading */
   .grade-bars{display:flex;flex-direction:column;gap:16px;}
   .gbar-row{display:flex;align-items:center;gap:16px;}
   .gbar-label{width:170px;flex:0 0 auto;font-size:14px;}
@@ -144,28 +100,21 @@
   .gbar-fill{height:100%;background:linear-gradient(90deg,var(--signal-dim),var(--signal));}
   .gbar-pct{width:44px;text-align:right;font-family:'IBM Plex Mono';color:var(--signal);font-size:14px;}
 
-  /* announcements */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  @media (max-width:720px){.grid2{grid-template-columns:1fr;} .dt{display:none;}}
+  .card{border:1px solid var(--line);border-radius:6px;padding:22px;background:var(--surface);}
+  .card h3{font-size:15px;margin-bottom:10px;color:var(--signal);font-family:'IBM Plex Mono';font-weight:600;letter-spacing:.03em;}
+  .card p, .card li{color:var(--text-dim);font-size:14px;}
+  .card ul{margin:0;padding-left:18px;}
+
   .ann{border:1px solid var(--line);border-radius:6px;padding:18px 20px;margin-bottom:12px;background:var(--surface);}
   .ann .d{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--text-dim);margin-bottom:6px;}
   .ann h4{margin:0 0 6px;font-size:15.5px;font-weight:700;color:#f2f6f6;}
   .ann p{margin:0;color:var(--text-dim);font-size:14px;}
   .ann.pinned{border-color:var(--signal-dim);}
 
-  /* two-col info */
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
-  @media (max-width:720px){.grid2{grid-template-columns:1fr;}}
-  .card{border:1px solid var(--line);border-radius:6px;padding:22px;background:var(--surface);}
-  .card h3{font-size:15px;margin-bottom:10px;color:var(--signal);font-family:'IBM Plex Mono';font-weight:600;letter-spacing:.03em;}
-  .card p, .card li{color:var(--text-dim);font-size:14px;}
-  .card ul{margin:0;padding-left:18px;}
-
   footer{padding:40px 0;text-align:center;}
   .fine{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--text-dim);}
-
-  @media (max-width:640px){
-    .hero{padding:64px 0 40px;}
-    section{padding:44px 0;}
-  }
 </style>
 </head>
 <body>
@@ -175,7 +124,7 @@
     <div class="brand"><span class="mark">RT-115</span><span class="name">韌性科技專題研討</span></div>
     <nav class="nav">
       <a href="#schedule">課程進度</a>
-      <a href="#works.html" onclick="location.href='works.html';return false;">成果展示</a>
+      <a href="#grading">成績評定</a>
       <a href="#ann">公告</a>
     </nav>
   </div>
@@ -188,36 +137,33 @@
     <p class="en mono">Seminar on Resilience Technology · 115學年度第1學期</p>
     <div class="hero-meta">
       <span class="chip">學分 <b>2</b></span>
-      <span class="chip">週四 <b>1–2節</b></span>
-      <span class="chip">開課 <b>健康科技學院碩士班</b></span>
-      <span class="chip">授課 <b>張育通 助理教授</b></span>
+      <span class="chip">健院碩士2年20班</span>
+      <span class="chip">週四 <b>1–2節 08:10–10:00</b></span>
+      <span class="chip">授課 <b>張育通 助理教授</b>　分機1205</span>
     </div>
-    <p class="hero-desc">本課程探討科技如何賦能社會與醫療體系以應對突發性災害，涵蓋 AI 於緊急醫療之應用、GIS 於資源配置、穿戴式裝置與災難現場生理監控，以及數位協作平台於志願者管理之實務。</p>
+    <p class="hero-desc">本課程探討科技如何賦能社會與醫療體系以應對突發性災害，涵蓋 AI 於緊急醫療之應用、GIS 於資源配置、穿戴式裝置與災難現場生理監控，以及數位協作平台於志願者管理之實務。每週附上建議閱讀文獻、相關產品／技術網站與影片，點開週次即可瀏覽。</p>
   </div>
 </section>
 
 <section id="schedule">
   <div class="wrap">
     <div class="section-head"><span class="idx mono">01</span><h2>18週課程進度 · SIGNAL MAP</h2></div>
+    <p class="section-sub">點一下地圖節點或下方週次列，展開當週建議閱讀、產品／技術網站與影片。</p>
 
     <div class="legend">
       <span><i class="dot" style="background:var(--signal)"></i>講授/討論</span>
       <span><i class="dot" style="background:var(--rose)"></i>報告/實做</span>
       <span><i class="dot" style="background:var(--amber)"></i>彈性教學（出差）</span>
+      <span><i class="dot" style="background:#e8c547"></i>待確認</span>
     </div>
 
     <div class="signal-map" id="signalMap"></div>
 
-    <table id="scheduleTable">
-      <thead>
-        <tr><th style="width:52px;">週次</th><th style="width:90px;">日期</th><th>課程單元／進度</th><th style="width:70px;">時數</th><th style="width:160px;">備註</th></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div class="weeklist" id="weekList"></div>
   </div>
 </section>
 
-<section>
+<section id="grading">
   <div class="wrap">
     <div class="section-head"><span class="idx mono">02</span><h2>成績評定</h2></div>
     <div class="grade-bars">
@@ -239,10 +185,10 @@
       </div>
       <div class="card">
         <h3>AI 使用規範</h3>
-        <p>鼓勵使用 AI 工具輔助蒐集資料或優化程式碼，惟作業或計畫書使用 AI 協助生成者，須於文末註明「AI 使用聲明」；生成內容之正確性由學生負全責。</p>
+        <p>鼓勵使用 AI 工具輔助蒐集資料或優化程式碼（如 GAS），惟作業或計畫書使用 AI 協助生成者，須於文末註明「AI 使用聲明」；生成內容之正確性由學生負全責。</p>
       </div>
       <div class="card">
-        <h3>參考資料</h3>
+        <h3>課本參考資料</h3>
         <ul>
           <li>Hollnagel, E., &amp; Braithwaite, J. (2024). <i>Resilient Health Care, Vol. 7</i>. Routledge.</li>
           <li>Kurland, K. S., &amp; Wilpen, L. G. (2024). <i>GIS Tutorial for Health</i> (6th ed.). Esri Press.</li>
@@ -265,36 +211,102 @@
 
 <footer>
   <div class="wrap">
-    <span class="fine">國立臺北護理健康大學 · 健康科技學院碩士班 · 115學年度第1學期 · RT-115 / SIGNAL MAP v2</span>
+    <span class="fine">國立臺北護理健康大學 · 健康科技學院碩士班 · 115學年度第1學期 · RT-115 / SIGNAL MAP v3</span>
   </div>
 </footer>
 
 <script>
-// ---- 教學進度（來源：教學計畫 + 已確認出差調整）----
 const SCHEDULE = [
-  {w:1,  d:'9/10',  t:'課程導論：韌性理論與科技介入架構', h:2, type:'lecture', note:'講授/討論'},
-  {w:2,  d:'9/17',  t:'複雜系統理論：醫療與社區的適應性循環', h:2, type:'lecture', note:'講授/討論'},
-  {w:3,  d:'9/24',  t:'數位轉型在緊急救護系統（EMS）的演進', h:2, type:'lecture', note:'講授/討論'},
-  {w:4,  d:'10/1',  t:'彈性教學：赴 Cares Expo 2026 台北國際照顧博覽會實地參訪', h:2, type:'flex', note:'彈性教學'},
-  {w:5,  d:'10/8',  t:'空間資訊技術（GIS）於災害資源配置之應用（併智慧城市專題討論）', h:2, type:'lecture', note:'講授/討論'},
-  {w:6,  d:'10/15', t:'大數據分析於流行病學與災害監測之實務', h:2, type:'lecture', note:'講授/討論'},
-  {w:7,  d:'10/22', t:'人工智慧（AI）於急重症派遣決策支持系統', h:2, type:'lecture', note:'講授/討論'},
-  {w:8,  d:'10/29', t:'穿戴式裝置與災難現場生理監控技術趨勢', h:2, type:'lecture', note:'講授/討論'},
-  {w:9,  d:'11/5',  t:'期中報告', h:2, type:'report', note:'報告'},
-  {w:10, d:'11/12', t:'彈性教學：教師出國參與 EMS ASIA（新加坡）', h:2, type:'flex', note:'彈性教學'},
-  {w:11, d:'11/19', t:'數位協作平台：志工管理（併 SNA 社交網絡分析）', h:2, type:'lecture', note:'講授/討論'},
-  {w:12, d:'11/26', t:'韌性技術的倫理、法律與社會影響（ELSI）', h:2, type:'lecture', note:'講授/討論'},
-  {w:13, d:'12/3',  t:'國際案例：EMS 科技發展（教師赴台灣醫療科技展，改為學生分組報告）', h:2, type:'report', note:'分組報告'},
-  {w:14, d:'12/10', t:'災難通訊韌性：從衛星科技到基層回報平台', h:2, type:'lecture', note:'講授/討論'},
-  {w:15, d:'12/17', t:'自動化工具應用', h:2, type:'lecture', note:'講授/討論'},
-  {w:16, d:'12/24', t:'期末報告', h:2, type:'report', note:'報告'},
-  {w:17, d:'12/31', t:'期末研究計畫雛形展示與同儕評論', h:2, type:'report', note:'實做'},
-  {w:18, d:'1/7',   t:'期末研究計畫雛形展示與同儕評論', h:2, type:'report', note:'實做'},
+  {w:1,  d:'9/10',  t:'課程導論：韌性理論與科技介入架構', type:'lecture'},
+  {w:2,  d:'9/17',  t:'複雜系統理論：醫療與社區的適應性循環', type:'lecture'},
+  {w:3,  d:'9/24',  t:'數位轉型在緊急救護系統（EMS）的演進', type:'lecture'},
+  {w:4,  d:'10/1',  t:'韌性健康照護實務專題討論＊', type:'flex',
+    note:'正式教學計畫填為通用彈性教學標題。實際安排：教師率隊參訪 Cares Expo 2026 台北國際照顧博覽會，學生繳交參訪心得報告。'},
+  {w:5,  d:'10/8',  t:'空間資訊技術（GIS）於災害資源配置之應用', type:'lecture'},
+  {w:6,  d:'10/15', t:'專題討論：智慧城市與社區抗災能力評估', type:'lecture'},
+  {w:7,  d:'10/22', t:'大數據分析於流行病學與災害監測之實務', type:'lecture'},
+  {w:8,  d:'10/29', t:'人工智慧（AI）於急重症派遣決策支持系統', type:'lecture'},
+  {w:9,  d:'11/5',  t:'穿戴式裝置與災難現場生理監控技術趨勢', type:'pending',
+    note:'⚠ 官方教學計畫PDF此列備註寫「報告」，與課程單元文字不一致，研判可能是插入第4週後、系統位移殘留的舊資料，此週實際上應為「期中報告」。請向教務系統確認後更新；下方暫時保留穿戴式裝置主題的資源以備需要。'},
+  {w:10, d:'11/12', t:'數位協作平台：志願者管理與行為擴散分析＊', type:'flex',
+    note:'正式教學計畫標記彈性教學。實際安排：教師出國參與 EMS ASIA（新加坡），本週資源可供學生自學／繳交文獻摘要。'},
+  {w:11, d:'11/19', t:'社交網絡分析（SNA）於災難動員之應用', type:'lecture'},
+  {w:12, d:'11/26', t:'韌性技術的倫理、法律與社會影響（ELSI）', type:'lecture'},
+  {w:13, d:'12/3',  t:'韌性健康照護實務專題討論＊', type:'flex',
+    note:'正式教學計畫填為通用彈性教學標題。實際安排：教師出差參加台灣醫療科技展，彈性教學名額已用罄，本週改為學生分組報告「國際案例：EMS科技發展」。'},
+  {w:14, d:'12/10', t:'災難通訊韌性：從衛星科技到基層回報平台', type:'lecture'},
+  {w:15, d:'12/17', t:'自動化工具應用', type:'lecture'},
+  {w:16, d:'12/24', t:'期末報告', type:'report'},
+  {w:17, d:'12/31', t:'期末研究計畫雛形展示與同儕評論', type:'report'},
+  {w:18, d:'1/7',   t:'期末研究計畫雛形展示與同儕評論', type:'report'},
 ];
 
+const RESOURCES = {
+  1: [
+    {type:'reading', title:'Resilience Engineering in Practice: A Guidebook', meta:'Hollnagel, Woods, Pariès & Wreathall (Eds.), 2011 · AHRQ PSNet', url:'https://psnet.ahrq.gov/issue/resilience-engineering-practice-guidebook'},
+    {type:'reading', title:'Resilience Engineering: Concepts and Precepts', meta:'Hollnagel, Woods & Leveson (Eds.), 2006 · AHRQ PSNet', url:'https://psnet.ahrq.gov/issue/resilience-engineering-concepts-and-precepts'},
+  ],
+  2: [
+    {type:'reading', title:'Health System Resilience: Understanding Complex Adaptive Systems', meta:'Karl Blanchet (Ed.) · The MIT Press', url:'https://mitpressbookstore.mit.edu/book/9780262550925'},
+    {type:'reading', title:'Viewing the global health system as a complex adaptive system', meta:'開放取用期刊論文 · PMC', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10432894/'},
+  ],
+  3: [
+    {type:'reading', title:'Digital Future of EMS: Usability of Electronic Patient Care Report System', meta:'Al Haliq & Al Jumaan, 2022', url:'https://doaj.org/article/027a1fb80e37443c810810b9f6e15f7d'},
+    {type:'tool', title:'Rescue.co — 肯亞數位化 EMS 派遣平台', meta:'案例報告 · PMC', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12418930', desc:'以 GPS、Android 裝置與 Google Maps API 打造的低成本派遣系統，將城市平均到達時間從160分鐘降至13分鐘。'},
+  ],
+  4: [
+    {type:'notice', title:'2026 Cares Expo 台北國際照顧博覽會', meta:'10/1–10/3 · 展覽1館', desc:'本週為彈性教學參訪週，請依課程網站公告繳交參訪心得報告，留意展區內與韌性科技相關的攤位（照護機器人、遠距監測、輔具科技等）。'},
+  ],
+  5: [
+    {type:'reading', title:'Learning Incident Prediction Models Over Large Geographical Areas for Emergency Response Systems', meta:'arXiv', url:'https://arxiv.org/pdf/2106.08307'},
+    {type:'tool', title:'Esri ArcGIS — 災害應變解決方案', meta:'Esri Disaster Response Program', url:'https://www.businesswire.com/news/home/20200319005357/en/Esri-Provides-Free-Mapping-Software-for-Organizations-Fighting-COVID-19', desc:'全球最主流的災害管理 GIS 平台，提供資源配置、儀表板與即時地圖工具。'},
+    {type:'video', title:'ArcGIS Online Case Study: Emergency Management – Cal OES', meta:'YouTube · 3:54', url:'https://www.youtube.com/watch?v=gqgncszNsEo'},
+  ],
+  6: [
+    {type:'reading', title:'FireCom — 智慧韌性城市數位分身：都市火災即時追蹤與預測平台', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12513986/'},
+    {type:'tool', title:'PANTHEON — 社區型智慧城市數位分身平台（EU Horizon）', meta:'CORDIS 計畫成果頁', url:'https://cordis.europa.eu/project/id/101074008/results', desc:'歐盟資助的社區導向智慧城市數位分身計畫，強化災害風險管理決策。'},
+  ],
+  7: [
+    {type:'reading', title:'The Johns Hopkins University CSSE COVID-19 Dashboard: data collection process, challenges faced, and lessons learned', meta:'The Lancet Digital Health · PMC', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC9432867'},
+  ],
+  8: [
+    {type:'reading', title:'Building a Machine Learning-based Ambulance Dispatch Triage Model for EMS', meta:'新加坡全國急救call center資料 · PMC', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10880163/'},
+    {type:'tool', title:'AI-assisted Dispatch Systems for Optimal Resource Allocation in Emergencies', meta:'IEEE Public Safety Technology Initiative', url:'https://publicsafety.ieee.org/topics/ai-assisted-dispatch-systems-for-optimal-resource-allocation-in-emergencies/'},
+  ],
+  9: [
+    {type:'reading', title:'Real-Time Monitoring Electronic Triage Tag System for Improving Survival Rate in Disaster-Induced MCI', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8307670/'},
+    {type:'reading', title:'Wearable Proximity Sensors for Monitoring a Mass Casualty Incident Exercise: Feasibility Study', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6658323/'},
+  ],
+  10: [
+    {type:'tool', title:'GoodSAM Responder — 志工/專業急救員派遣App', meta:'NHS 與各國 EMS 採用', url:'https://apps.apple.com/app/id815154202', desc:'串連受過CPR訓練的志工與心跳停止案件，也用於NHS志工調度。'},
+    {type:'reading', title:"'Walkie talkie' app Zello tops App Store during hurricanes", meta:'BBC News', url:'https://feeds.bbci.co.uk/news/technology-41224942'},
+  ],
+  11: [
+    {type:'reading', title:'The Mechanism of Social Organization Participation in Natural Hazards Emergency Relief（雅安地震SNA案例）', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6862843/'},
+    {type:'reading', title:'Social Network Analysis of Disaster Response, Recovery, and Adaptation', meta:'Jones & Faas (Eds.) · Elsevier', url:'https://shop.elsevier.com/books/social-network-analysis-of-disaster-response-recovery-and-adaptation/jones/978-0-12-805196-2'},
+  ],
+  12: [
+    {type:'reading', title:'Fairness and accountability of AI in disaster risk management: Opportunities and challenges', meta:'PMC 開放取用', url:'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8600248/'},
+    {type:'reading', title:'Taking Ethics, Fairness, and Bias Seriously in Machine Learning for Disaster Risk Management', meta:'arXiv（提及Harvard Humanitarian Initiative的Signal Code）', url:'https://arxiv.org/pdf/1912.05538'},
+  ],
+  13: [
+    {type:'notice', title:'Healthcare+ Expo Taiwan 台灣醫療科技展', meta:'12/3–12/6 · 南港展覽館', url:'https://www.businesswire.com/news/home/20231201397595/zh-CN', desc:'亞太最大醫療科技展之一，涵蓋AI醫療、穿戴式裝置、遠距照護等。教師出差期間，各組準備「國際案例：EMS科技發展」簡報。'},
+  ],
+  14: [
+    {type:'reading', title:'Starlink puts towns devastated by wildfires online for disaster relief workers', meta:'TechCrunch', url:'https://techcrunch.com/2020/09/29/starlink-puts-towns-devastated-by-wildfires-online-for-disaster-relief-workers'},
+    {type:'tool', title:'ASPR TRACIE — 災難通訊系統資源專輯', meta:'美國衛生部技術資源合輯', url:'https://asprtracie.hhs.gov/technical-resources/78/Communication-Systems/0'},
+  ],
+  15: [
+    {type:'tool', title:'n8n — 開源工作流程自動化工具', meta:'n8n.io', url:'https://n8n.io', desc:'可視化拉線串接不同服務，適合搭配Google Sheets/GAS自動化課程或研究流程。'},
+    {type:'tool', title:'Zapier — 無程式碼自動化平台', meta:'zapier.com', url:'https://zapier.com', desc:'串接超過7000個應用程式的自動化工具，可作為自動化工具應用的入門示範。'},
+  ],
+  16: [], 17: [], 18: [],
+};
+
+const ICONS = {reading:'📖', tool:'🔗', video:'▶️', notice:'📌'};
+
 const DEMO_ANN = [
-  {date:'2026-09-01', title:'課程網站上線', body:'本學期課程資訊、進度公告與成果展示將統一透過本站發布，請定期查看。', pinned:true},
-  {date:'2026-09-24', title:'第4週彈性教學說明', body:'10/1（四）教師赴 Cares Expo 2026 參訪，本週改為彈性教學，請依公告完成參訪心得繳交。', pinned:false},
+  {date:'2026-09-01', title:'課程網站上線', body:'本學期課程資訊、進度公告與每週資源將統一透過本站發布，請定期查看。', pinned:true},
 ];
 
 function renderMap(){
@@ -304,29 +316,67 @@ function renderMap(){
     node.className = 'node ' + row.type;
     node.innerHTML = `<div class="sq">${row.w}</div><span class="lbl">${row.d}</span>`;
     node.title = row.t;
-    node.onclick = () => {
-      const el = document.querySelector(`tr[data-week="${row.w}"]`);
-      if(el){ el.scrollIntoView({behavior:'smooth', block:'center'}); el.style.outline = '1px solid var(--signal)'; setTimeout(()=>el.style.outline='', 900); }
-    };
+    node.onclick = () => toggleWeek(row.w, true);
     map.appendChild(node);
   });
 }
 
-function renderTable(){
-  const tbody = document.querySelector('#scheduleTable tbody');
+function tagFor(type){
+  if(type==='flex') return '<span class="tag flex">彈性教學</span>';
+  if(type==='report') return '<span class="tag report">報告</span>';
+  if(type==='pending') return '<span class="tag pending">待確認</span>';
+  return '';
+}
+
+function renderList(){
+  const wrap = document.getElementById('weekList');
   SCHEDULE.forEach(row=>{
-    const tr = document.createElement('tr');
-    tr.dataset.week = row.w;
-    if(row.type==='flex') tr.classList.add('row-flex');
-    if(row.type==='report') tr.classList.add('row-report');
-    const tagClass = row.type==='flex' ? 'flex' : (row.type==='report' ? 'report' : 'disc');
-    tr.innerHTML = `<td class="wk">${String(row.w).padStart(2,'0')}</td>
-      <td class="dt">${row.d}</td>
-      <td>${row.t}</td>
-      <td class="mono">${row.h}</td>
-      <td><span class="tag ${tagClass}">${row.note}</span></td>`;
-    tbody.appendChild(tr);
+    const card = document.createElement('div');
+    card.className = 'weekcard' + (row.type==='flex' ? ' row-flex' : row.type==='report' ? ' row-report' : row.type==='pending' ? ' row-pending' : '');
+    card.id = 'week-' + row.w;
+
+    const head = document.createElement('div');
+    head.className = 'weekhead';
+    head.innerHTML = `<span class="wk mono">${String(row.w).padStart(2,'0')}</span><span class="dt">${row.d}</span><span class="wtitle">${row.t}</span>${tagFor(row.type)}<span class="caret mono">›</span>`;
+    head.onclick = () => toggleWeek(row.w);
+
+    const body = document.createElement('div');
+    body.className = 'weekbody';
+    let bodyHtml = '';
+    if(row.note){
+      bodyHtml += `<div class="weeknote${row.type==='pending'?' warn':''}">${row.note}</div>`;
+    }
+    const res = RESOURCES[row.w] || [];
+    if(res.length){
+      bodyHtml += '<ul class="reslist">' + res.map(r => `
+        <li class="resitem">
+          <span class="ico">${ICONS[r.type]}</span>
+          <div>
+            ${r.url ? `<a href="${r.url}" target="_blank" rel="noopener">${r.title}</a>` : `<strong>${r.title}</strong>`}
+            <div class="meta">${r.meta || ''}${r.desc ? ' — ' + r.desc : ''}</div>
+          </div>
+        </li>`).join('') + '</ul>';
+    } else if(!row.note){
+      bodyHtml += '<p class="resempty">本週為報告／實作週，無額外指定資源，請依評分標準準備。</p>';
+    }
+    body.innerHTML = bodyHtml;
+
+    card.appendChild(head);
+    card.appendChild(body);
+    wrap.appendChild(card);
   });
+}
+
+function toggleWeek(w, forceOpen){
+  const card = document.getElementById('week-' + w);
+  if(!card) return;
+  if(forceOpen){
+    document.querySelectorAll('.weekcard.open').forEach(c => { if(c!==card) c.classList.remove('open'); });
+    card.classList.add('open');
+  } else {
+    card.classList.toggle('open');
+  }
+  card.scrollIntoView({behavior:'smooth', block:'center'});
 }
 
 function renderAnn(){
@@ -341,7 +391,7 @@ function renderAnn(){
 }
 
 renderMap();
-renderTable();
+renderList();
 renderAnn();
 </script>
 </body>
